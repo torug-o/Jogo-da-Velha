@@ -6,13 +6,13 @@ algoritmo "JOGO DA VELHA"
 
 var
 y,z,w,r,f,k,u,a: inteiro
-x, cor, c1, c2, c3, c4, c5, c6, c7, c8, c9, nome, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10: caractere
+x, cor, c1, c2, c3, c4, c5, c6, c7, c8, c9, nome, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, nome2, modo, por: caractere
 jogadas: vetor[1..5] de caractere
 
 procedimento loading
 inicio
 
-escreval("CARREGANDO |",l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,"|")
+escreval("CARREGANDO |",l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,"| ",por)
 
 fimprocedimento
 
@@ -31,51 +31,61 @@ fimprocedimento
 procedimento ll1
 inicio
 l1<-("#")
+por<-("10%")
 fimprocedimento
 
 procedimento ll2
 inicio
 l2<-("#")
+por<-("20%")
 fimprocedimento
 
 procedimento ll3
 inicio
 l3<-("#")
+por<-("30%")
 fimprocedimento
 
 procedimento ll4
 inicio
 l4<-("#")
+por<-("40%")
 fimprocedimento
 
 procedimento ll5
 inicio
 l5<-("#")
+por<-("50%")
 fimprocedimento
 
 procedimento ll6
 inicio
 l6<-("#")
+por<-("60%")
 fimprocedimento
 
 procedimento ll7
 inicio
 l7<-("#")
+por<-("70%")
 fimprocedimento
 
 procedimento ll8
 inicio
 l8<-("#")
+por<-("80%")
 fimprocedimento
 
 procedimento ll9
 inicio
 l9<-("#")
+por<-("90%")
 fimprocedimento
 
 procedimento ll10
 inicio
 l10<-("#")
+por<-("100%")
 fimprocedimento
 
 procedimento lpro
@@ -90,11 +100,12 @@ l7<-(" ")
 l8<-(" ")
 l9<-(" ")
 l10<-(" ")
+por<-("0%")
 fimprocedimento
 
 procedimento tabul1
 inicio
-Escreval(" PC= O  PLAYER= X       Dificuldade=", a)
+ Escreval(" ",nome2,"= O  ",nome,"= X       Dificuldade=", a)
 escreval("")
 escreval("")
 escreval("          |          |")
@@ -120,7 +131,7 @@ fimprocedimento
 procedimento tabuleiro
 inicio
 repita
- Escreval(" PC= O  PLAYER= X       Dificuldade=", a)
+ Escreval(" ",nome2,"= O  ",nome,"= X       Dificuldade=", a)
 escreval("")
 escreval("")
 escreval("          |          |")
@@ -141,7 +152,6 @@ escreval("         7|         8|          9")
    Escreval("")
    escreval("")
    Escreval("Escreva a coordenada da sua jogada (exemplo primeira casa c1, segunda c2... etc.)")
-   Escreval("A máquina jogará logo em seguida")
    leia(cor)
    se (cor="c1") ou (cor="c2") ou (cor="c3")  ou (cor="c4") ou (cor="c5") ou (cor="c6") ou (cor="c7") ou (cor="c8") ou (cor="c9") entao
       limpatela
@@ -276,6 +286,76 @@ caso("c9")
 fimescolha
 fimprocedimento
 
+
+procedimento escolhe2
+inicio
+escolha cor
+caso("c1")
+   se c1=(" ") entao
+      c1<-("O")
+      w<-2
+   senao
+      tabuleiro
+   fimse
+caso("c2")
+   se c2=(" ") entao
+      c2<-("O")
+      w<-2
+   senao
+      tabuleiro
+   fimse
+caso("c3")
+   se c3=(" ") entao
+      c3<-("O")
+      w<-2
+   senao
+      tabuleiro
+   fimse
+caso("c4")
+   se c4=(" ") entao
+      c4<-("O")
+      w<-2
+   senao
+      tabuleiro
+   fimse
+caso("c5")
+   se c5=(" ") entao
+      c5<-("O")
+      w<-2
+   senao
+      tabuleiro
+   fimse
+caso("c6")
+   se c6=(" ") entao
+      c6<-("O")
+      w<-2
+   senao
+      tabuleiro
+   fimse
+caso("c7")
+   se c7=(" ") entao
+      c7<-("O")
+      w<-2
+   senao
+      tabuleiro
+   fimse
+caso("c8")
+   se c8=(" ") entao
+      c8<-("O")
+      w<-2
+   senao
+      tabuleiro
+   fimse
+caso("c9")
+   se c9=(" ") entao
+      c9<-("O")
+      w<-2
+   senao
+      tabuleiro
+   fimse
+fimescolha
+fimprocedimento
+
 procedimento jogadam
 inicio
 r<-randi(8)
@@ -335,7 +415,7 @@ se c1=("X") entao
    se c2=("X") entao
       se c3=("X") entao
          tabul1
-         Escreval(nome, " VOCÊ GANHOOOOOOOOU!!!!!")
+         Escreval(nome, "  VOCÊ GANHOU!!!! ", nome2, " VOCÊ PERDEU!!!! ")
       fimalgoritmo
    fimse
 fimse
@@ -345,7 +425,7 @@ se c1=("X")  entao
 se c4=("X") entao
    se c7=("X") entao
       tabul1
-      Escreval(nome, " VOCÊ GANHOOOOOOOOU!!!!!")
+      Escreval(nome, "  VOCÊ GANHOU!!!! ", nome2, " VOCÊ PERDEU!!!! ")
    fimalgoritmo
 fimse
 fimse
@@ -355,7 +435,7 @@ se c1=("X") entao
 se c5=("X") entao
 se c9=("X") entao
    tabul1
-   Escreval(nome, " VOCÊ GANHOOOOOOOOU!!!!!")
+   Escreval(nome, "  VOCÊ GANHOU!!!! ", nome2, " VOCÊ PERDEU!!!! ")
 fimalgoritmo
 fimse
 fimse
@@ -365,7 +445,7 @@ se c5=("X") entao
 se c2=("X") entao
 se c8=("X") entao
 tabul1
-Escreval(nome, " VOCÊ GANHOOOOOOOOU!!!!!")
+Escreval(nome, "  VOCÊ GANHOU!!!! ", nome2, " VOCÊ PERDEU!!!! ")
 fimalgoritmo
 fimse
 fimse
@@ -375,7 +455,7 @@ se c4=("X") entao
 se c5=("X") entao
 se c6=("X") entao
 tabul1
-Escreval(nome, " VOCÊ GANHOOOOOOOOU!!!!!")
+Escreval(nome, "  VOCÊ GANHOU!!!! ", nome2, " VOCÊ PERDEU!!!! ")
 fimalgoritmo
 fimse
 fimse
@@ -385,7 +465,7 @@ se c3=("X") entao
 se c6=("X") entao
 se c9=("X") entao
 tabul1
-Escreval(nome, " VOCÊ GANHOOOOOOOOU!!!!!")
+Escreval(nome, "  VOCÊ GANHOU!!!! ", nome2, " VOCÊ PERDEU!!!! ")
 fimalgoritmo
 fimse
 fimse
@@ -395,7 +475,7 @@ se c3=("X") entao
 se c5=("X") entao
 se c7=("X") entao
 tabul1
-Escreval(nome, " VOCÊ GANHOOOOOOOOU!!!!!")
+Escreval(nome, "  VOCÊ GANHOU!!!! ", nome2, " VOCÊ PERDEU!!!! ")
 fimalgoritmo
 fimse
 fimse
@@ -405,7 +485,7 @@ se c7=("X") entao
 se c8=("X") entao
 se c9=("X") entao
 tabul1
-Escreval(nome, " VOCÊ GANHOOOOOOOOU!!!!!")
+Escreval(nome, "  VOCÊ GANHOU!!!! ", nome2, " VOCÊ PERDEU!!!! ")
 fimalgoritmo
 fimse
 fimse
@@ -417,7 +497,7 @@ se c1=("O") entao
 se c2=("O") entao
 se c3=("O") entao
 tabul1
-Escreval(nome, "VOCÊ PERDEU!!!!")
+Escreval(nome, " VOCÊ PERDEU!!!! ", nome2, " VOCÊ GANHOU!!!! ")
 fimalgoritmo
 fimse
 fimse
@@ -427,7 +507,7 @@ se c1=("O")  entao
 se c4=("O") entao
 se c7=("O") entao
 tabul1
-Escreval(nome, "VOCÊ PERDEU!!!!")
+Escreval(nome, " VOCÊ PERDEU!!!! ", nome2, " VOCÊ GANHOU!!!! ")
 fimalgoritmo
 fimse
 fimse
@@ -437,7 +517,7 @@ se c1=("O") entao
 se c5=("O") entao
 se c9=("O") entao
 tabul1
-Escreval(nome, "VOCÊ PERDEU!!!!")
+Escreval(nome, " VOCÊ PERDEU!!!! ", nome2, " VOCÊ GANHOU!!!! ")
 fimalgoritmo
 fimse
 fimse
@@ -447,7 +527,7 @@ se c5=("O") entao
 se c2=("O") entao
 se c8=("O") entao
 tabul1
-Escreval(nome, "VOCÊ PERDEU!!!!")
+Escreval(nome, " VOCÊ PERDEU!!!! ", nome2, " VOCÊ GANHOU!!!! ")
 fimalgoritmo
 fimse
 fimse
@@ -457,7 +537,7 @@ se c4=("O") entao
 se c5=("O") entao
 se c6=("O") entao
 tabul1
-Escreval(nome, "VOCÊ PERDEU!!!!")
+Escreval(nome, " VOCÊ PERDEU!!!! ", nome2, " VOCÊ GANHOU!!!! ")
 fimalgoritmo
 fimse
 fimse
@@ -467,7 +547,7 @@ se c3=("O") entao
 se c6=("O") entao
 se c9=("O") entao
 tabul1
-Escreval(nome, "VOCÊ PERDEU!!!!")
+Escreval(nome, " VOCÊ PERDEU!!!! ", nome2, " VOCÊ GANHOU!!!! ")
 fimalgoritmo
 fimse
 fimse
@@ -477,7 +557,7 @@ se c3=("O") entao
 se c5=("O") entao
 se c7=("O") entao
 tabul1
-Escreval(nome, "VOCÊ PERDEU!!!!")
+Escreval(nome, " VOCÊ PERDEU!!!! ", nome2, " VOCÊ GANHOU!!!! ")
 fimalgoritmo
 fimse
 fimse
@@ -487,7 +567,7 @@ se c7=("O") entao
 se c8=("O") entao
 se c9=("O") entao
 tabul1
-Escreval(nome, "VOCÊ PERDEU!!!!")
+Escreval(nome, " VOCÊ PERDEU!!!! ", nome2, " VOCÊ GANHOU!!!! ")
 fimalgoritmo
 fimse
 fimse
@@ -707,6 +787,10 @@ fimprocedimento
 
 inicio
 // Seção de Comandos
+escreval ("DIGITE CPU para jogar com a máquina e PLAYER para jogar player vs player")
+leia(modo)
+se modo=("CPU") entao
+nome2<-("CPU")
 escreval("Por favor escreva seu nome")
 leia(nome)
 limpatela
@@ -879,5 +963,162 @@ ate w=2
 w<-0
 teste
 tabul1
-Escreval (nome, " DEU VELHA!!! EMPATE")
+Escreval (nome, "  DEU VELHA!!! EMPATE")
+fimse
+
+se modo=("PLAYER") entao
+Escreval("Escreva o nome do player 1")
+leia(nome)
+Escreval("Escreva o nome do player 2")
+leia(nome2)
+limpatela
+lpro
+vazio
+timer(20)
+loading
+timer(0)
+vazio
+ll1
+limpatela
+vazio
+timer(20)
+loading
+timer(0)
+vazio
+ll2
+limpatela
+vazio
+timer(20)
+loading
+timer(0)
+vazio
+ll3
+limpatela
+vazio
+timer(20)
+loading
+timer(0)
+vazio
+ll4
+limpatela
+vazio
+timer(20)
+loading
+timer(0)
+vazio
+ll5
+limpatela
+vazio
+timer(20)
+loading
+timer(0)
+vazio
+ll6
+limpatela
+vazio
+timer(20)
+loading
+timer(0)
+vazio
+ll7
+limpatela
+vazio
+timer(20)
+loading
+timer(0)
+vazio
+ll8
+limpatela
+vazio
+timer(20)
+loading
+timer(0)
+vazio
+ll9
+limpatela
+vazio
+timer(20)
+loading
+timer(0)
+vazio
+ll10
+limpatela
+vazio
+timer(20)
+loading
+timer(0)
+vazio
+
+ESCREVAL("TUDO PRONTO")
+TIMER(1000)
+ESCREVAL("VAMOS JOGAR!!!")
+escreval("")
+TIMER(0)
+limpatela
+preload
+title
+escreval(nome, " é a sua vez")
+tabuleiro
+repita
+escolhe1
+ate w=2
+w<-0
+escreval(nome2, " é a sua vez")
+tabuleiro
+repita
+escolhe2
+ate w=2
+w<-0
+escreval(nome, " é a sua vez")
+tabuleiro
+repita
+escolhe1
+ate w=2
+w<-0
+escreval(nome2, " é a sua vez")
+tabuleiro
+repita
+escolhe2
+ate w=2
+w<-0
+escreval(nome, " é a sua vez")
+tabuleiro
+repita
+escolhe1
+ate w=2
+w<-0
+teste
+escreval(nome2, " é a sua vez")
+tabuleiro
+repita
+escolhe2
+ate w=2
+w<-0
+teste
+escreval(nome, " é a sua vez")
+tabuleiro
+repita
+escolhe1
+ate w=2
+w<-0
+teste
+escreval(nome2, " é a sua vez")
+tabuleiro
+repita
+escolhe2
+ate w=2
+w<-0
+teste
+escreval(nome, " é a sua vez")
+tabuleiro
+repita
+escolhe1
+ate w=2
+w<-0
+teste
+tabul1
+Escreval("Deu velha, empate!!!")
+fimse
+
+
 fimalgoritmo
